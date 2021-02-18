@@ -1,9 +1,8 @@
 import styles from './search_header.module.css';
-import React, { useRef } from 'react';
+import React, { memo, useRef } from 'react';
 
-const SerchHeader = ({ onSearch }) => {
+const SerchHeader = memo(({ onSearch, returnHome }) => {
   const inputRef = useRef();
-
   const handleSearch = () => {
     const value = inputRef.current.value;
     onSearch(value);
@@ -21,7 +20,7 @@ const SerchHeader = ({ onSearch }) => {
 
   return (
     <header className={styles.header}>
-      <div className={styles.logo}>
+      <div className={styles.logo} onClick={returnHome}>
         <img className={styles.img} src="/images/logo.png" alt="logo" />
         <h1 className={styles.title}>Youtube</h1>
       </div>
@@ -33,10 +32,14 @@ const SerchHeader = ({ onSearch }) => {
         onKeyPress={onKeyPress}
       />
       <button className={styles.button} type="submit" onClick={onClick}>
-        <img className={styles.buttonImg} src="/images/search.png" alt="" />
+        <img
+          className={styles.buttonImg}
+          src="/images/search.png"
+          alt="button"
+        />
       </button>
     </header>
   );
-};
+});
 
 export default SerchHeader;

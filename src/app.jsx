@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import styles from './app.module.css';
 import SerchHeader from './components/search_header/serch_header';
 import VideoDetail from './components/video_detail/video_detail';
@@ -12,21 +12,33 @@ const App = ({ youtube }) => {
     setSelectedVideo(video);
   };
 
-  const search = (query) => {
+  const search = useCallback(
+    (query) => {
+      setSelectedVideo(null);
+      youtube
+        .search(query) //
+        .then((videos) => setVideos(videos));
+    },
+    [youtube]
+  );
+
+  const returnHome = useCallback(() => {
+    setSelectedVideo(null);
+
     youtube
-      .search(query) //
+      .mostPopular() //
       .then((videos) => setVideos(videos));
-  };
+  }, [youtube]);
 
   useEffect(() => {
     youtube
       .mostPopular() //
       .then((videos) => setVideos(videos));
-  }, []);
+  }, [youtube]);
 
   return (
     <div className={styles.app}>
-      <SerchHeader onSearch={search}></SerchHeader>
+      <SerchHeader onSearch={search} returnHome={returnHome}></SerchHeader>
       <section className={styles.content}>
         {selectedVideo && (
           <div className={styles.detail}>
