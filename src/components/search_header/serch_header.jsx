@@ -22,7 +22,7 @@ const SerchHeader = memo(({ onSearch, returnHome }) => {
     <header className={styles.header}>
       <div className={styles.logo} onClick={returnHome}>
         <img className={styles.img} src="/images/logo.png" alt="logo" />
-        <h1 className={styles.title}>Youtube</h1>
+        <h2 className={styles.title}>SongTube</h2>
       </div>
       <input
         ref={inputRef}

@@ -1,39 +1,42 @@
-.container {
-  padding: 0.2em;
+* {
+  box-sizing: border-box;
 }
 
-.container.grid {
-  width: 50%;
+.container {
+  margin: 2em;
+  width: 20em;
 }
 
 .container.list {
   width: 100%;
+  margin: 0.5em 0;
 }
 
 .video {
   display: flex;
-  align-items: center;
-  border: 1px solid lightgray;
+  flex-direction: column;
+  align-items: flex-start;
   cursor: pointer;
   transition: transform 200ms ease-in;
-  box-shadow: 5px 4px 5px 0px rgba(209, 202, 209, 1);
 }
 
 .video:hover {
-  transform: scale(1.02);
+  transform: scale(1.05);
 }
 
 .thumbnail {
-  width: 40%;
+  width: 100%;
   height: 100%;
 }
 
 .metadata {
+  margin-top: 0.5em;
   margin-left: 0.2em;
 }
 
 .title,
-.channel {
+.channel,
+.date {
   margin: 0;
   font-size: 0.8rem;
 }

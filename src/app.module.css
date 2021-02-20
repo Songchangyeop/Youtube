@@ -1,5 +1,6 @@
 * {
   box-sizing: border-box;
+  font-family: 'Noto Sans KR', sans-serif;
 }
 
 ul {
@@ -9,7 +10,6 @@ ul {
 }
 
 .app {
-  max-width: 80rem;
 }
 
 .content {
