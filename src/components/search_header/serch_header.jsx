@@ -21,7 +21,11 @@ const SerchHeader = memo(({ onSearch, returnHome }) => {
   return (
     <header className={styles.header}>
       <div className={styles.logo} onClick={returnHome}>
-        <img className={styles.img} src="./images/logo.png" alt="logo" />
+        <img
+          className={styles.img}
+          src={process.env.PUBLIC_URL + '/images/logo.png'}
+          alt="logo"
+        />
         <h2 className={styles.title}>SongTube</h2>
       </div>
       <input
@@ -34,7 +38,7 @@ const SerchHeader = memo(({ onSearch, returnHome }) => {
       <button className={styles.button} type="submit" onClick={onClick}>
         <img
           className={styles.buttonImg}
-          src="./images/search.png"
+          src={process.env.PUBLIC_URL + '/images/search.png'}
           alt="button"
         />
       </button>

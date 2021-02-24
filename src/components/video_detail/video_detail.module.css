@@ -1,3 +1,7 @@
+p {
+  margin: 0;
+}
+
 .detail {
   padding: 0.2em;
   padding-left: 3em;
@@ -20,6 +24,39 @@
 
 .video {
   height: 31.25em;
+}
+
+.channel_description {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding-bottom: 1rem;
+}
+
+.channel_left {
+  display: flex;
+}
+
+.viewCount,
+.date {
+  padding: 0 0.3rem;
+}
+
+.channel_right {
+  display: flex;
+}
+
+.likeContainer {
+  padding: 0 1rem;
+}
+
+.dislikeContainer {
+  padding: 0 1rem;
+}
+
+.likeIcon,
+.dislikeIcon {
+  padding: 0 0.3rem;
 }
 
 @media screen and (max-width: 48rem) {

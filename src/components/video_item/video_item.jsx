@@ -1,7 +1,13 @@
 import React, { memo } from 'react';
 import styles from './video_item.module.css';
 const VideoItem = memo(
-  ({ video, video: { snippet }, onVideoClick, display }) => {
+  ({
+    video,
+    video: { snippet },
+    video: { statistics },
+    onVideoClick,
+    display,
+  }) => {
     const displayType = display === 'list' ? styles.list : styles.grid;
 
     return (
