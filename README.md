@@ -4,6 +4,6 @@
 
 ## Stack
 - React
-- PostCSS
+- CSS Module
 - HTML5
 - Javascript
